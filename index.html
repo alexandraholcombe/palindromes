@@ -6,7 +6,7 @@
   <link rel="stylesheet" href="css/styles.css" media="screen" title="no title" charset="utf-8">
   <script src="js/jquery-3.1.1.js" charset="utf-8"></script>
   <script src="js/scripts.js" charset="utf-8"></script>
-  <title>Factorial Solver</title>
+  <title>Palindrome Verifier</title>
 </head>
 <body>
   <div class="container">
@@ -16,12 +16,12 @@
     <form>
       <div class="form-group">
         <label for="number">Input a string of text to determine if it is the same backwards as it is forwards.</label>
-        <input type="number" id="user-string" class="form-control">
+        <input type="text" id="user-string" class="form-control">
       </div>
       <button type="submit" class="btn btn-large btn-secondary">Submit</button>
     </form>
 
-    <p class="result"></p>
+    <p class="result"><span id="palindrome"></span></p>
   </div>
 </body>
 </html>

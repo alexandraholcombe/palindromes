@@ -1,25 +1,28 @@
 //Business Logic
-var numberInput = 0;
-var result = 1;
+var userInput = 0;
+var reverse = 0;
+var rawData = 0;
 
-var factorialize = function() {
-  for (var currentNumber = numberInput; currentNumber > 0; currentNumber -= 1){
-    result = result * currentNumber;
-    console.log(result);
-  };
-  $(".result").show();
-  $("#factorial").append(result);
+var verifier = function () {
+  for (var i = 0; i < userInput.length; i++) {
+    reverse = userInput.length -1 - i;
+    $(".result").show();
+    if (userInput[i] != userInput[reverse]) {
+      $("#palindrome").text("This is not a palindrome")
+      return false;
+    }
+    else if (userInput[i] === userInput[reverse]) {
+      $("#palindrome").text("This is a palindrome")
+    }
+}
+}
 
-};
-//User Logic
-$(document).ready(function() {
+
+//User Interface
+$("document").ready(function() {
   $("form").submit(function(event) {
     event.preventDefault();
-    numberInput = parseInt($("#number").val());
-    factorialize();
-
+    userInput = $("input#user-string").val().split("");
+    verifier();
   });
 });
-
-// minh for loop
-// for (var currentNumber = 1; currentNumber<=numberInput; currentNumber++)
